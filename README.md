@@ -33,8 +33,3 @@ Theoretically this mod "should" only require Forge. However it won't do much if 
 * Thaumcraft + RecallStones * changes the recall stone recipes to use arcane crafting
 * Thaumcraft + ExNihilo + ForbiddenMagic * adds crucible recipes for FM shards
 * Thaumcraft + CustomNpcs * adds recipes for some items, used for quests in AS2.
-
-## Vanilla Changes
-* Different logs give different amounts of charcoal
-* If Forestry or Natura are installed it makes the changes to their log smelting recipes too. 
-* If Thermal Expansion is installed it adds the changes to the RedstoneFurnace
