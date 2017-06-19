@@ -1,0 +1,19 @@
+[
+	{
+		"modid": "jctweaks",
+		"name": "JadedTweaks",
+		"description": "JadedCat Charcoal",
+		"version": "${version}",
+		"mcversion": "${mcversion}",
+		"url": "https://github.com/JadedPacks/JadedTweaks",
+		"updateUrl": "",
+		"authorList": [
+			"Jadedcat",
+			"Developaws"
+		],
+		"credits": "JadedPacks",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": []
+	}
+]

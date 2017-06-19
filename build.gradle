@@ -1,0 +1,79 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		maven {
+			name = "forge"
+			url = "http://files.minecraftforge.net/maven"
+		}
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/"
+		}
+	}
+	dependencies {
+		classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+	}
+}
+
+repositories {
+	ivy {
+		name "Thaumcraft"
+		artifactPattern "https://dl.dropboxusercontent.com/u/47135879/[module]-deobf-${project.forgeVersion}-[revision].[ext]"
+	}
+	maven {
+		name "TCon"
+		url "http://dvs1.progwml6.com/files/maven"
+	}
+	maven {
+		name = "ExNihilo"
+		url "http://maven.tterrag.com"
+	}
+}
+
+apply plugin: 'forge'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = modVersion
+group = "com.jadedpacks.jadedtweaks"
+archivesBaseName = "JadedTweaks"
+
+minecraft {
+	version = forgeVersion + "-" + forgeBuild
+	replaceIn "Main.java"
+	replace "@VERSION@", project.version
+	replace "@MCVERSION@", project.minecraft.version
+	runDir = "eclipse"
+}
+
+dependencies {
+	compile name: 'Thaumcraft', version: thaumcraftVersion, ext: 'jar'
+	compile "tconstruct:TConstruct:${forgeVersion}-${tconVersion}"
+	compile "exnihilo:Ex-Nihilo:${exnihiloVersion}"
+	compile files("libs/${bloodmagicVersion}")
+}
+
+def root = project.projectDir.parentFile
+sourceSets {
+	main {
+		java {
+			srcDir new File(root, "src")
+		}
+		resources {
+			srcDir new File(root, "resources")
+		}
+	}
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "mcversion", project.minecraft.version
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+		expand 'version': project.version, 'mcversion': project.minecraft.version
+	}
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}
