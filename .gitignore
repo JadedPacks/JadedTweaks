@@ -1,22 +1,14 @@
-# gradle stuff
-build
-.gradle
+# Compiled stuff
+*.class
+*.jar
 
-# eclipse stuff
+# Eclipse stuff
 .classpath
 .project
-.settings
-bin
+.settings/
 
-# run place
-eclipse
-
-#api
-api
-
-# intellij stuff
-.idea
-out
-*.iml
-*.iws
-*.ipr
+# Gradle stuff
+.gradle/
+bin/
+build/
+!gradle/wrapper/gradle-wrapper.jar
