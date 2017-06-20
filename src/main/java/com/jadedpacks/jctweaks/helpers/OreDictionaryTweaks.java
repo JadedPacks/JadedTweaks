@@ -14,8 +14,6 @@ public class OreDictionaryTweaks {
 		if(Loader.isModLoaded("AWWayofTime")) {
 			OreDictionary.registerOre("fastmine", Parts.fastmine);
 			OreDictionary.registerOre("divination", Parts.divination);
-			OreDictionary.registerOre("teleposition", Parts.teleposition);
-			OreDictionary.registerOre("transposition", Parts.transposition);
 			OreDictionary.registerOre("blank", Parts.blank);
 			OreDictionary.registerOre("reinforced", Parts.reinforced);
 			OreDictionary.registerOre("imbued", Parts.imbued);
@@ -25,6 +23,10 @@ public class OreDictionaryTweaks {
 			OreDictionary.registerOre("magnetsigil", Parts.magnetsigil);
 			OreDictionary.registerOre("growth", Parts.growth);
 			OreDictionary.registerOre("bloodLamp", Parts.bloodLamp);
+		}
+		if(Loader.isModLoaded("Sanguinmancy")) {
+			OreDictionary.registerOre("teleposition", Parts.teleposition);
+			OreDictionary.registerOre("transposition", Parts.transposition);
 		}
 		if(Loader.isModLoaded("TConstruct")) {
 			OreDictionary.registerOre("stenciltable", Parts.stencil1);
